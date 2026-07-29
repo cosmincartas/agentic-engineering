@@ -1,0 +1,7 @@
+interface:
+  display_name: "To Plan"
+  short_description: "Build validated plans from approved specs"
+  default_prompt: "Use $to-plan with the path to a validated specification."
+
+policy:
+  allow_implicit_invocation: false
