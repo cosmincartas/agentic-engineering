@@ -22,7 +22,33 @@ After the specification is saved and validation passes:
 Use the to-plan workflow with docs/agentic-engineering/specs/<session>/<subject>.md.
 ```
 
-Runtimes that support named Agent Skills may invoke these as `$brainstorming` and `$to-plan`.
+Named-skill invocation syntax varies by runtime.
+
+## Install
+
+The same `skills/` directory is packaged for Codex, Claude Code, GitHub Copilot, and Pi:
+
+```bash
+# Codex
+codex plugin marketplace add cosmincartas/agentic-engineering
+codex plugin add agentic-workflow@agentic-workflow
+
+# Claude Code
+claude plugin marketplace add cosmincartas/agentic-engineering
+claude plugin install agentic-workflow@agentic-workflow
+
+# GitHub Copilot CLI
+copilot plugin install cosmincartas/agentic-engineering
+
+# Pi
+pi install git:github.com/cosmincartas/agentic-engineering
+```
+
+Explicit invocation syntax is host-specific: `$agentic-workflow:to-plan` in Codex, `/agentic-workflow:to-plan` in Claude Code, `/agentic-workflow/to-plan` in Copilot, and `/skill:to-plan` in Pi.
+
+## Releases
+
+Keep the versions in `.codex-plugin/plugin.json` and `.claude-plugin/plugin.json` equal, tag the commit as `v<version>`, and publish a GitHub Release. Users can watch GitHub Releases for cross-agent update notifications.
 
 ## Artifacts
 

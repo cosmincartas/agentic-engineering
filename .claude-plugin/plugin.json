@@ -1,0 +1,13 @@
+{
+  "name": "agentic-workflow",
+  "version": "0.1.0",
+  "description": "Turn development requests into approved specifications and validated implementation plans.",
+  "author": {
+    "name": "cosmincartas",
+    "url": "https://github.com/cosmincartas"
+  },
+  "homepage": "https://github.com/cosmincartas/agentic-engineering",
+  "repository": "https://github.com/cosmincartas/agentic-engineering",
+  "keywords": ["planning", "specifications", "agentic-engineering"],
+  "skills": "./skills/"
+}

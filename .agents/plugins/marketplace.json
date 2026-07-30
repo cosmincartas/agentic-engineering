@@ -1,0 +1,21 @@
+{
+  "name": "agentic-workflow",
+  "interface": {
+    "displayName": "Agentic Workflow"
+  },
+  "plugins": [
+    {
+      "name": "agentic-workflow",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/cosmincartas/agentic-engineering",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

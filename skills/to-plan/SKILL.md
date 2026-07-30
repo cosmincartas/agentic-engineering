@@ -5,7 +5,7 @@ description: Use when the user explicitly provides a saved, validated specificat
 
 # To Plan
 
-Create an intent-stable implementation plan from one eligible specification. Run only after explicit `$to-plan` invocation.
+Create an intent-stable implementation plan from one eligible specification. Run only when the user explicitly invokes this skill.
 
 Never run `git commit` without the user's explicit consent. Approval to save an artifact or continue the workflow is not consent to commit.
 
