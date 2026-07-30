@@ -37,12 +37,12 @@ For every subject-clarifying question, try to provide at least two concrete opti
 2. **Build coherent subjects and classify them.** Include every requested outcome without inventing scope.
 3. **Confirm every classification below high confidence.** Ask one focused classification question at a time; never silently choose between conflicting evidence.
 4. **Present and obtain explicit approval for the scope map.** Show only `Subject`, `Type`, and `Status`, with each status `Not Started`. Write nothing before approval.
-5. **Persist the minimal triage document.** Fill `assets/triage.md` and save it as `docs/agentic-engineering/triage/YYYY-MM-DD-<prompt-slug>.md`; add `-2`, `-3`, and so on for collisions. Do not add columns or metadata. On write failure, report it and stop without changing dependent state.
-6. **Ask which `Not Started` subject to explore.** When resuming after context loss, treat saved specification paths as completed handoffs, do not repeat them, and select only from `Not Started` rows unless the user directs otherwise.
+5. **Persist approved subjects in the daily triage document.** Use `docs/agentic-engineering/triage/YYYY-MM-DD.md`. If it does not exist, fill `assets/triage.md` with the date and approved subject rows. If it exists, require the same three-column table, preserve every existing row and status, and append only approved `(Subject, Type)` pairs not already present, each with status `Not Started`. Never create another triage file for the same date or add columns or metadata. On read, parse, or write failure, report it and stop without changing dependent state.
+6. **Ask which `Not Started` subject from the current approved scope map to explore.** When resuming after context loss, treat saved specification paths as completed handoffs, do not repeat them, and select only from relevant `Not Started` rows unless the user directs otherwise.
 7. **Ask one focused question at a time** until goals, current behavior, boundaries, constraints, failure behavior, risks, and architectural decisions are materially clear. Re-inspect relevant current evidence when resuming.
 8. **Present consolidated conclusions and require explicit approval.** Resolve material open questions before proceeding.
 9. **Read `references/to-spec.md` completely and execute it.** The pre-save response is the complete specification followed by its approval/save question. “Save immediately” is not approval of an unseen draft; never save before approval given after display, and never skip post-save validation.
-10. **Update triage and offer another subject.** A declined save remains `Not Started`; a saved specification path remains even when its validation needs revision.
+10. **Update the matching `(Subject, Type)` triage row and offer another subject.** A declined save remains `Not Started`; a saved specification path remains even when its validation needs revision.
 
 Never create an implementation plan or persist an ADR. Never inspect, edit, or ask about `.gitignore`.
 

@@ -1,4 +1,4 @@
-# {{Session}}
+# {{YYYY-MM-DD}} Triage
 
 | Subject | Type | Status |
 |---|---|---|

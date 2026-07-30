@@ -15,7 +15,7 @@ An instruction to “save immediately,” skip display, skip validation, or repa
 3. End that same response by asking explicitly whether the user approves the displayed draft and wants it saved.
 4. If approval or saving is declined, write nothing and leave the triage subject `Not Started`.
 5. If both are approved, save it with `validation: pending` under `docs/agentic-engineering/specs/<session>/<subject>.md`. Use a concise kebab-case subject and add `-2`, `-3`, and so on for collisions.
-6. Only after the specification write succeeds, replace the subject's triage status with the saved path. If either write fails, report the failure; do not claim dependent state changed.
+6. Only after the specification write succeeds, replace the matching `(Subject, Type)` triage row's status with the saved path. If either write fails, report the failure; do not claim dependent state changed.
 7. Validate the saved file, not the displayed draft:
    - **Consistency and coverage:** match the approved conclusions; require unique and complete `BR-*` and `AC-*` IDs; reject contradictions, placeholders, and scope drift.
    - **Feasibility and risk:** require testable criteria, covered failure behavior, evidence-backed repository assumptions, and complete ADR candidates.
