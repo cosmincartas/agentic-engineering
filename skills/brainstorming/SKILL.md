@@ -29,6 +29,8 @@ Do not split mechanically by type.
 
 ## Workflow
 
+For every subject-clarifying question, try to provide at least two concrete options. Mark one as **Recommended** and briefly explain why it best fits the evidence, constraints, or simplest path; keep an open-ended response available when the options do not cover the user's intent.
+
 1. **Inspect the prompt and repository evidence.** If no repository exists, state that limitation and use the available evidence.
 2. **Build coherent subjects and classify them.** Include every requested outcome without inventing scope.
 3. **Confirm every classification below high confidence.** Ask one focused classification question at a time; never silently choose between conflicting evidence.
