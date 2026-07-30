@@ -7,6 +7,8 @@ description: Use when a development prompt contains a new feature, feature chang
 
 Turn a development prompt into approved, resumable subject specifications. Preserve user control at every write boundary.
 
+Never run `git commit` without the user's explicit consent. Approval to save an artifact or continue the workflow is not consent to commit.
+
 ## Evidence and classification
 
 When a repository exists, inspect relevant implementation and callers, tests and test names, public interfaces, UI copy, validation and errors, history or changelog, and existing ADRs. Do not classify from prompt wording alone.

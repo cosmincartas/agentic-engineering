@@ -10,6 +10,8 @@ validation: pending
 ## Implementation Start
 Before changing production code, check the source specification for an `ADR Addendum`. If present, persist each candidate under `docs/adr/`. Reuse an equivalent accepted ADR. For a changed decision, create the next numbered ADR and name the prior ADR under `Supersedes`. Stop and ask about unclear conflicts; never modify an existing ADR. Keep persisted ADRs self-contained and do not link them to the disposable specification or plan.
 
+Never run `git commit` without the user's explicit consent after implementation and verification. Approval of this plan is not consent to commit.
+
 ## Goal and Constraints
 ## Repository Findings
 ## Tasks

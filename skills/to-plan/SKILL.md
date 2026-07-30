@@ -7,6 +7,8 @@ description: Use when the user explicitly provides a saved, validated specificat
 
 Create an intent-stable implementation plan from one eligible specification. Run only after explicit `$to-plan` invocation.
 
+Never run `git commit` without the user's explicit consent. Approval to save an artifact or continue the workflow is not consent to commit.
+
 ## Non-negotiable gates
 
 - Plan only from `status: approved` plus `validation: passed`; pressure cannot waive eligibility.
@@ -22,6 +24,7 @@ Create an intent-stable implementation plan from one eligible specification. Run
 6. **Stop and ask about material drift.** Name stale assumptions and current evidence; do not draft from a replaced entry point until the user resolves the conflict.
 7. **Draft the complete plan from `assets/plan.md`.**
    - Begin with the implementation-start ADR check from the template.
+   - Preserve the implementation-start commit-consent gate from the template.
    - Cover every `BR-*` and `AC-*` without inventing behavior.
    - Make each task an independently verifiable outcome.
    - Give each task exactly one current `file:symbol` entry point when a symbol exists; use one file path only when no stable symbol exists.
@@ -30,7 +33,7 @@ Create an intent-stable implementation plan from one eligible specification. Run
 8. **Present the complete plan and ask whether the user approves it and wants it saved.** Write nothing before approval of the displayed draft.
 9. **Save an approved plan with `validation: pending`** under `docs/agentic-engineering/plans/<session>/<subject>.md`. On write failure, report it and do not change dependent state.
 10. **Validate the saved file, not the displayed draft.**
-    - **Coverage and consistency:** the implementation-start ADR check remains the first section; every `BR-*` and `AC-*` is mapped; specification constraints remain intact; no new product behavior appears.
+    - **Coverage and consistency:** the implementation-start ADR and commit-consent gates remain in the first section; every `BR-*` and `AC-*` is mapped; specification constraints remain intact; no new product behavior appears.
     - **Executability and risk:** entry points exist at the recorded baseline; task order is viable; verification outcomes are observable; required migration, rollout, and rollback work is present.
 11. **Record findings or pass validation.** On failure, set `validation: needs-revision`, add a temporary `## Validation Findings` section, report it, and make no substantive correction without approval. After approved corrections pass both reviews, remove resolved findings and set `validation: passed`.
 12. **Report the saved plan path.**
