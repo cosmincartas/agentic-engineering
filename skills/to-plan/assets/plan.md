@@ -3,10 +3,12 @@ specification: "{{path}}"
 repository_baseline: "{{commit or unavailable}}"
 status: approved
 validation: pending
-adr_persistence: pending
 ---
 
 # {{Subject}} Implementation Plan
+
+## Implementation Start
+Before changing production code, check the source specification for an `ADR Addendum`. If present, persist each candidate under `docs/adr/`. Reuse an equivalent accepted ADR. For a changed decision, create the next numbered ADR and name the prior ADR under `Supersedes`. Stop and ask about unclear conflicts; never modify an existing ADR. Keep persisted ADRs self-contained and do not link them to the disposable specification or plan.
 
 ## Goal and Constraints
 ## Repository Findings

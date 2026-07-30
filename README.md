@@ -8,7 +8,7 @@ The instructions are plain Markdown and can be loaded by any model or agent runt
 
 1. **`brainstorming`** may run implicitly. It inspects repository evidence, separates and classifies coherent subjects, saves an approved triage map, explores one subject at a time, and produces a validated specification.
 2. **`to-plan`** requires explicit invocation and a saved specification with `status: approved` and `validation: passed`. It re-inspects the live repository, stops on material drift, and produces a validated implementation plan.
-3. ADR candidates are persisted only after plan validation. Existing ADRs are immutable: equivalent decisions are reused and changed decisions create a numbered superseding ADR.
+3. ADR candidates are persisted only when implementation starts. The plan begins with that check; existing ADRs stay immutable, equivalent decisions are reused, and changed decisions create a numbered superseding ADR.
 
 ## Usage
 
