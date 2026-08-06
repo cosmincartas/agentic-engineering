@@ -7,7 +7,7 @@ The instructions are plain Markdown and can be loaded by any model or agent runt
 ## Workflow
 
 1. **`brainstorming`** may run implicitly. It inspects repository evidence, clarifies the request through focused questions, and produces two user-validated artifacts in sequence: a PRD (problem, goals, constraints, `FR-*`/`NFR-*` requirements, `AC-*` acceptance criteria) and a design document (design, alternatives considered, contracts, data models, error handling, verification). Each artifact is saved as `status: draft` the moment it is drafted, then validated by the user before the flow proceeds.
-2. **`to-plan`** requires explicit invocation and consumes a validated design document. It is being refactored separately against the new design-doc contract.
+2. **`to-plan`** requires explicit invocation and consumes a validated design document. It re-inspects the live repository, stops on material drift, and produces a user-validated, resumable implementation plan: granular tasks that each carry a status line, one repository entry point, requirement IDs, and an observable verification outcome. The plan is a self-contained handoff — any later session resumes from the first task not yet `Done`.
 
 ## Usage
 
@@ -55,9 +55,9 @@ Keep the versions in `.codex-plugin/plugin.json` and `.claude-plugin/plugin.json
 |---|---|---|
 | PRD | `docs/agentic-engineering/prd/` | Disposable planning input |
 | Design document | `docs/agentic-engineering/specs/` | Disposable planning input |
-| Implementation plan | `docs/agentic-engineering/plans/` | Disposable execution input |
+| Implementation plan | `docs/agentic-engineering/plans/` | Resumable execution input |
 
-PRDs and design documents are saved automatically as drafts and validated by the user before the workflow proceeds; nothing is committed to git without explicit consent.
+PRDs, design documents, and plans are saved automatically as drafts and validated by the user before the workflow proceeds; nothing is committed to git without explicit consent. Plans additionally carry execution state: implementers update each task's `Status` line as work proceeds.
 
 The skills never inspect or change `.gitignore`. If desired, ignore the disposable artifacts manually:
 
@@ -70,6 +70,6 @@ docs/agentic-engineering/
 This repository uses Codex's bundled structural validator; the workflow files themselves remain model-agnostic.
 
 ```bash
-python "${CODEX_HOME:-$HOME/.codex}/skills/.system/skill-creator/scripts/quick_validate.py" skills/brainstorming
+python "${CODEX_HOME:-$HOME/.codex}/skills/.system/skill-creator/scripts/quick_validate.py" skills/brainstorm
 python "${CODEX_HOME:-$HOME/.codex}/skills/.system/skill-creator/scripts/quick_validate.py" skills/to-plan
 ```
