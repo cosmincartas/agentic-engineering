@@ -1,5 +1,5 @@
 ---
-name: brainstorming
+name: brainstorm
 description: Use when a development prompt contains a new feature, feature change, or bug report that needs clarification before implementation. Produces a validated PRD and design document before any code is written.
 ---
 
